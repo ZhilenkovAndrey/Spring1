@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class ProductRepository {
-
     private final AtomicLong idAtomic = new AtomicLong();
     private final Map<Long, Product> productMap = new HashMap<>();
 
