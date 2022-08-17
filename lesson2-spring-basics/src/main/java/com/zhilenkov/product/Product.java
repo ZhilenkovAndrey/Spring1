@@ -10,13 +10,15 @@ public class Product {
     private String title;
     private Double cost;
 
-    public Product(String title, Double cost) {
+    public Product(Long id, String title, Double cost) {
+        this.id = id;
         this.title = title;
         this.cost = cost;
     }
 
-    public String getTitle() {
-        return title;
+    public Product(String title, Double cost) {
+        this.title = title;
+        this.cost = cost;
     }
 
     @Override

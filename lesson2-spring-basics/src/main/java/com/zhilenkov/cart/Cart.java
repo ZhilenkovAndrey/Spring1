@@ -1,10 +1,13 @@
 package com.zhilenkov.cart;
 
 import com.zhilenkov.product.Product;
+import lombok.Getter;
+import lombok.Setter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
+@Getter
+@Setter
 public class Cart {
     private List<Product> products;
 
@@ -24,20 +27,8 @@ public class Cart {
         products.add(product);
     }
 
-//    public void remove(String title) {
-//        products.removeIf(p -> p.getTitle().equals(title));
-//    }
-//
-//    public void remove(long id) {
-//        products.removeIf(p -> p.getId().equals(id));
-//    }
-
     public void remove(Product product) {
         products.remove(product);
-    }
-
-    public void clear() {
-        products.clear();
     }
 }
 

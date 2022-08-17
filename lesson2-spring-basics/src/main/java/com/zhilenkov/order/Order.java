@@ -2,7 +2,6 @@ package com.zhilenkov.order;
 
 import com.zhilenkov.product.Product;
 import com.zhilenkov.user.User;
-
 import java.util.List;
 
 public class Order {

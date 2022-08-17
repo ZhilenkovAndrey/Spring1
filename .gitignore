@@ -47,7 +47,7 @@ cmake-build-*/
 
 # IntelliJ
 out/
-lesson1-servlet-api/
+lesson1-servlet-api/target
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/

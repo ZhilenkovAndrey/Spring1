@@ -16,34 +16,18 @@ public class ProductService {
 
     @PostConstruct
     public void init() {
-        this.productRepository.insert(new Product("Milk", 30.0));
-        this.productRepository.insert(new Product("Bread", 25.0));
-        this.productRepository.insert(new Product("Cheese", 80.0));
-        this.productRepository.insert(new Product("Meat", 180.0));
-        this.productRepository.insert(new Product("Fish", 240.0));
-        this.productRepository.insert(new Product("SomeProduct", 340.0));
-        this.productRepository.insert(new Product("OtherProduct", 240.0));
-        this.productRepository.insert(new Product("Nothing", 0.0));
-        this.productRepository.insert(new Product("AnyProduct", 140.0));
+        productRepository.init();
     }
 
     public List<Product> findAll() {
         return productRepository.findAll();
     }
 
-    public Product find(long id) {
+    public Product find(Long id) {
         return productRepository.find(id);
     }
 
     public Product find(String title) {
         return productRepository.find(title);
-    }
-
-    public void delete(long id) {
-        productRepository.delete(id);
-    }
-
-    public void delete(String title) {
-        productRepository.delete(title);
     }
 }

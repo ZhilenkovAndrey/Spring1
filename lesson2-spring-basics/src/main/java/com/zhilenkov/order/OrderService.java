@@ -32,7 +32,9 @@ public class OrderService {
     public void printListProducts() {
         productService.init();
         System.out.println("---------------------------------------------------------");
-        productService.findAll().stream().forEach(System.out::println);
+        productService.findAll().stream().forEach(System.out::print);
+        System.out.println();
+        System.out.println();
         System.out.println("---------------------------------------------------------");
         System.out.println();
         System.out.println("Do you want to make an order: y/n ");
@@ -142,10 +144,10 @@ public class OrderService {
                     break;
                 }
                 try {
-                    int c = Integer.parseInt(a);
+                    Long c =  Long.parseLong(a);
                     cartService.addToCart(c);
                 } catch (NumberFormatException ex) {
-                    System.out.println(" Unknown command...");
+                    System.out.println(" Unknown position...");
                     productAdd();
                 }
             }
@@ -177,7 +179,7 @@ public class OrderService {
                     break;
                 }
                 try {
-                    int c = Integer.parseInt(a);
+                    Long c =  Long.parseLong(a);
                     cartService.removeFromCart(c);
                 } catch (NumberFormatException ex) {
                     System.out.println(" Unknown command...");
@@ -192,7 +194,7 @@ public class OrderService {
         System.out.println(" Order id = " + order.getId());
         System.out.println(" Order owner: " + order.getUser().getUsername());
         System.out.println("------------------------------------------------");
-        order.getProducts().stream().forEach(System.out::println);
+        cartService.getCurrentCart().getProducts().forEach(System.out::println);
         System.out.println("------------------------------------------------");
     }
 }

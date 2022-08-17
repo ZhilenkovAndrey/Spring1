@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct;
 @Component
 public class CartService {
     private ProductService productService;
-    private Cart cart;
+    public Cart cart;
 
     @Autowired
     public CartService(ProductService productService) {
@@ -24,7 +24,7 @@ public class CartService {
         return this.cart;
     }
 
-    public void addToCart(long id) {
+    public void addToCart(Long id) {
         cart.add(productService.find(id));
     }
 
@@ -32,15 +32,11 @@ public class CartService {
         cart.add(productService.find(title));
     }
 
-    public void clearCurrentCart() {
-        cart.clear();
-    }
-
     public void removeFromCart(String title) {
         cart.remove(productService.find(title));
     }
 
-    public void removeFromCart(long id) {
+    public void removeFromCart (Long id) {
         cart.remove(productService.find(id));
     }
 }
