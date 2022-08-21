@@ -10,8 +10,6 @@ import java.io.PrintWriter;
 
 @WebServlet(urlPatterns = "/product")
 public class ProductServlet extends HttpServlet {
-
-
     private ProductRepository productRepository;
 
     @Override
@@ -41,5 +39,9 @@ public class ProductServlet extends HttpServlet {
         this.productRepository.insert(new Product("Cheese", 80.0));
         this.productRepository.insert(new Product("Meat", 180.0));
         this.productRepository.insert(new Product("Fish", 240.0));
+        this.productRepository.insert(new Product("SomeProduct", 340.0));
+        this.productRepository.insert(new Product("OtherProduct", 240.0));
+        this.productRepository.insert(new Product("Nothing", 0.0));
+        this.productRepository.insert(new Product("AnyProduct", 140.0));
     }
 }
