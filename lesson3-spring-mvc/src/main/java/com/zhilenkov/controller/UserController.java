@@ -31,7 +31,19 @@ public class UserController {
 
     @PostMapping
     public String saveUser(User user) {
-        userRepository.update(user);
+        userRepository.save(user);
+        return "redirect:/user";
+    }
+
+    @GetMapping("/new")
+    public String addNewUser (Model model) {
+        model.addAttribute("user", new User(""));
+        return "user_form";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteUserById(@PathVariable long id) {
+        userRepository.delete(id);
         return "redirect:/user";
     }
 }

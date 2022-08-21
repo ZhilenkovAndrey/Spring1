@@ -72,8 +72,8 @@
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
                     <server>TomcatServer</server>
-                    <username>Andrey</username>
-                    <password>123</password>
+                    <username>Admin</username>
+                    <password>Admin</password>
                     <path>/spring-mvc</path>
                     <update>true</update>
                 </configuration>
